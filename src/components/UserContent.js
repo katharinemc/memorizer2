@@ -10,10 +10,16 @@ passage: 'A long, long time ago, I can still remember..'
         }
     }
 
+getPassage(passage) {
+this.setState({
+    passage
+})
+}
+
     render () {
         return (
             <div>
-    <FormFields />
+    <FormFields onChange={(passage)=>this.getPassage(passage)}/>
     <DisplayText print={this.state.passage}/>
     </div>
         );
