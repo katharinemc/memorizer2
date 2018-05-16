@@ -10,16 +10,18 @@ passage: 'A long, long time ago, I can still remember..'
         }
     }
 
-getPassage(passage) {
-this.setState({
-    passage
-})
+getPassage(e) {
+e.preventDefault();
+    console.log('hi there!')
+// this.setState({
+//     passage
+// })
 }
 
     render () {
         return (
             <div>
-    <FormFields onChange={(passage)=>this.getPassage(passage)}/>
+    <FormFields handlerMethod={this.getPassage}/>
     <DisplayText print={this.state.passage}/>
     </div>
         );
