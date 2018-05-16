@@ -1,11 +1,10 @@
-import React from 'react';AdvanceButton
+import React from 'react';
 
 
 export default function AdvanceButton(props) {
 
 
-    return (
-  
+    return (  
         <button onClick={(e) => props.onClick(e)}>Next</button>
     );
 

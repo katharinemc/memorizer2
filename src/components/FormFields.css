@@ -1,0 +1,16 @@
+
+input[type=text] {
+    width: 66%;
+    padding: 3%;
+    border-radius: 13px;
+    border: 1px solid black;
+    margin: 3%;
+    display: inline;
+    font-size: inherit;
+     line-height: 1.42857143;
+  }
+  
+  
+  input[type=button] {
+    display: inline;
+}
