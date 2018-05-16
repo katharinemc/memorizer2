@@ -3,12 +3,11 @@ import PassageButton from  './PassageButton'
 
 export default function FormFields(props) {
 
-console.log('heythere', props.onChange)
     return (
         <form>
         <label for="InputText">Add a passage</label>
-        <input type="text"  id="InputText" />
-        <PassageButton handlerMethod={props.handlerMethod} />
+        <input type="text" onChange={(e) => props.inputMethod(e.target.value)} id="InputText" />
+        <PassageButton handlerMethod={props.buttonMethod} />
         </form>
     );
 

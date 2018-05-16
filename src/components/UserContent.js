@@ -6,23 +6,33 @@ export default class UserContent extends React.Component {
     constructor(props) {
         super(props);
         this.state ={
-passage: 'A long, long time ago, I can still remember..'
+passage: 'A long, long time ago, I can still remember..',
+displayPassage: 'A long, long time ago, I can still remember..'
         }
     }
 
-getPassage(e) {
+getPassage(passage) {
+    this.setState({
+        passage
+    })
+}
+
+setPassage(e, passage) {
 e.preventDefault();
-    console.log('hi there!')
-// this.setState({
-//     passage
-// })
+console.log('button pressed', passage, this)
+
+this.setState({
+    displayPassage: this.state.passage
+})
 }
 
     render () {
+
         return (
+
             <div>
-    <FormFields handlerMethod={this.getPassage}/>
-    <DisplayText print={this.state.passage}/>
+    <FormFields passage={this.state.passage} inputMethod={(passage)=>this.getPassage(passage)} buttonMethod={this.setPassage.bind(this)}/>
+    <DisplayText print={this.state.displayPassage}/>
     </div>
         );
     }
